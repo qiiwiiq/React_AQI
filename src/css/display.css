@@ -1,0 +1,48 @@
+.displayPage {
+    font-family: 'Open Sans', 'Noto Sans TC';
+    margin: 10px 0;
+}
+
+.display-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    flex: 0 1 108px;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-left: 6px;
+}
+
+.divider {
+    flex: 1;
+    border-bottom: 3px dotted #000;
+    width: 550px;
+}
+
+.note {
+    flex: 0 1 180px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+.display-data {
+    position: relative;
+}
+
+.siteList {
+    width: 754px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    cursor: pointer;
+}
+

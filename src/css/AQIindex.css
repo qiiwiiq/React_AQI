@@ -1,0 +1,39 @@
+table {
+    border-collapse: collapse;
+    margin-left: 30px;
+}
+
+td {
+    width: 120px;
+    height: 48px;
+    border: 3px solid #000;
+    font-family: 'Open Sans', 'Noto Sans TC';
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#grade td:nth-child(1){
+    background-color: #95F084;
+}
+
+#grade td:nth-child(2){
+    background-color: #FFE695;
+}
+
+#grade td:nth-child(3){
+    background-color: #FFAF6A;
+}
+
+#grade td:nth-child(4){
+    background-color: #FF5757;
+}
+
+#grade td:nth-child(5){
+    background-color: #9777FF;
+}
+
+#grade td:nth-child(6){
+    background-color: #AD1774;
+}
+

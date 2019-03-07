@@ -1,0 +1,15 @@
+.page {
+    padding: 20px 80px 0 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-display {
+    margin-top: 0.2vh;
+}
+

@@ -1,0 +1,40 @@
+.siteDetail-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.outer-container {
+    width: 350px;
+    height: 438px;
+    border-left: 3px solid #000;
+    border-right: 3px solid #000;
+    border-bottom: 3px solid #000;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.innerContainer {
+    width: 100%;
+    height: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.bt-border {
+    border-bottom: 1px solid #000;
+}
+
+.item {
+    height: 16%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item span {
+    font-size: 0.9rem;
+    font-weight: 400;
+}

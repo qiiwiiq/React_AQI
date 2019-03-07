@@ -1,0 +1,31 @@
+.card {
+    width: 350px;
+    height: 97px;
+    border: 3px solid #000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.siteName {
+    width: 50%;
+    background-color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 3px solid #000;
+}
+
+.AQI {
+    width: 50%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
