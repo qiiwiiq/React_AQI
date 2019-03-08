@@ -9,18 +9,11 @@ import '../css/App.css';
 
 
 class App extends React.Component{
-    state = { data: [], region: '新北市', selectedSite: null };
+    state = { data: [], region: '', selectedSite: '' };
 
-    regionData = (data, region) => {
-        let regionData = data.filter(item => Object.values(item)[1] === region);
-        return regionData;
-    };
     
-    onRegionSubmit = (country) => {
-        this.setState({region: country});
-    };
-
     componentWillMount(){
+        // 撈AQI資料
         const getData = async () => {
             try{
                 const response = await axios.get(`${proxy}https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000259/?format=json&limit=100&token=${key}`);
@@ -32,10 +25,38 @@ class App extends React.Component{
             }
         };
         getData();
+        setInterval(getData, 1800000); // 半小時更新一次
     }
 
+    // 選擇地區(region)以及把此地區第一個觀測站(selectedSite)存到state
+    onRegionSubmit = (region, data=this.state.data) => {
+        this.setState({region: region});
+        let sitedata = this.regionData(data, region)[0];
+        let defaultSite = this.getDefaultSite(sitedata);
+        this.setState({selectedSite: defaultSite});
+    };
+    
+    // 點選某觀測站(selectedSite)時更新state
+    onSiteSelect = (site) => {
+        this.setState({selectedSite : site});
+    }
+
+    // 得到選取地區的第一觀測站名稱
+    getDefaultSite = (regionDataArr) => {
+        let objectValues = Object.values(regionDataArr);
+        let defaultSiteName = objectValues[0];
+        return defaultSiteName;
+    }
+
+    // 取出地區資料
+    regionData = (data, region) => {
+        let regionData = data.filter(item => Object.values(item)[1] === region);
+        return regionData;
+    };
+
     render(){
-        const { data, region } = this.state;
+        const { data, region, selectedSite } = this.state;
+        
         if(data.length>0){
             return (
                 <div className="page">
@@ -44,7 +65,12 @@ class App extends React.Component{
                         <AQIindex/>
                     </div>
                     <div className="section-display">
-                        <Display data={this.regionData(data, region)} region={region} />
+                        <Display 
+                            data={this.regionData(data, region)} 
+                            region={region} 
+                            onSiteSelect={this.onSiteSelect} 
+                            SiteName={selectedSite}
+                        />
                     </div>
                     <div className="section-footer">
                         <Footer/>

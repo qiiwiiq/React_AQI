@@ -3,15 +3,10 @@ import '../css/searchBar.css';
 
 class SearchBar extends React.Component {
 
-    constructor(props){
-        super(props);
-        this.state = { region: '' };
-    }
+    state = { region: '' };
 
-    onRegionChange = async(e) => {
-        await this.setState({region: e.target.value});
-        await this.props.submit(this.state.region);
-    };
+    // 選擇地區更新state，藉由callback function傳遞參數
+    onRegionChange = async(e) => this.props.submit(e.target.value);
 
     render(){
         return (
@@ -44,7 +39,7 @@ class SearchBar extends React.Component {
                 </select>
             </div>
         );
-    }
+    };
 }
 
 export default SearchBar;

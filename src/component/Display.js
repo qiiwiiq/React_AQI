@@ -5,15 +5,8 @@ import '../css/display.css';
 
 class Display extends React.Component {
 
-    state = { SiteName : this.props.data[0].SiteName };
-
-    onSiteSelect = async(site) => {
-        await this.setState({SiteName : site});
-        // await console.log(this.state.SiteName);
-    }
-
+    // 得到觀測站的資料物件
     getSiteData = (arr, site) => {
-        // console.log(Object.values(arr[0]));
         let selectedSiteData = arr.filter(el => Object.values(el)[0] === site);
         if(selectedSiteData.length>0){
             let exportData = selectedSiteData[0];
@@ -22,15 +15,16 @@ class Display extends React.Component {
         return selectedSiteData;
     };
     
+    // 每一觀測站AQI
     renderList = () => {
         let SiteDataCard =this.props.data.map(item => {
-            return <SiteData onSiteSelect={this.onSiteSelect} key={item.SiteName} SiteName={item.SiteName} AQI={item.AQI} />
+            return <SiteData onSiteSelect={this.props.onSiteSelect} key={item.SiteName} SiteName={item.SiteName} AQI={item.AQI} />
         });
         return SiteDataCard;
     }
 
     render(){
-        const {data, region} = this.props;
+        const {data, region, onSiteSelect, SiteName} = this.props;
         if(data.length>0){
             return (
                 <div className="displayPage">
@@ -42,9 +36,13 @@ class Display extends React.Component {
                     </div>
 
                     <div className="display-data">
-                        {/* 左邊: 某一監測站詳細資訊欄位 */}
+                        {/* 左邊: 點選之觀測站詳細資訊欄位 */}
                         <div className="siteDetail">
-                            <SiteDetail onSiteSelect={this.onSiteSelect} data={this.getSiteData(data, this.state.SiteName)} SiteName={this.state.SiteName} />
+                            <SiteDetail 
+                                onSiteSelect={onSiteSelect} 
+                                data={this.getSiteData(data, SiteName)} 
+                                SiteName={SiteName} 
+                            />
                         </div>
 
                         {/* 右邊: 地區每一監測站AQI */}
@@ -56,7 +54,7 @@ class Display extends React.Component {
             );
         } else {
             return (
-                <div>Loading...</div>
+                <div>Please select a region</div>
             );
         }
     }    
