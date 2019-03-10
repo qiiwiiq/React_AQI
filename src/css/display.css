@@ -30,7 +30,9 @@
 }
 
 .display-data {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .siteList {
@@ -38,11 +40,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
 
-    position: absolute;
-    top: 0;
-    right: 0;
-
+.siteList .card {
     cursor: pointer;
 }
 

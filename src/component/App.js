@@ -5,23 +5,29 @@ import SearchBar from './SearchBar';
 import AQIindex from './AQIindex';
 import Display from './Display';
 import Footer from './Footer';
+import Loading from './Loading';
 import '../css/App.css';
 
 
 class App extends React.Component{
     state = { data: [], region: '', selectedSite: '' };
 
-    
     componentWillMount(){
         // 撈AQI資料
         const getData = async () => {
             try{
                 const response = await axios.get(`${proxy}https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000259/?format=json&limit=100&token=${key}`);
-                this.setState({ data: response.data.result.records});
+                this.setState({ 
+                    data: response.data.result.records,
+                    region: '新北市'
+                });
+                let sitedata = this.regionData(this.state.data, this.state.region)[0];
+                let defaultSite = this.getDefaultSite(sitedata);
+                this.setState({selectedSite: defaultSite});
                 console.log('ok');
 
             } catch (err) {
-                console.log(err);
+                alert('An Error occurred, please refresh the page and try again.');
             }
         };
         getData();
@@ -78,7 +84,7 @@ class App extends React.Component{
                 </div>
             );
         } else {
-            return <div>Loading...</div>
+            return <Loading />;
         }
     }
 }
