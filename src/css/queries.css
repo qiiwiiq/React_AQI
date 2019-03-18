@@ -1,0 +1,21 @@
+@media only screen and (max-width: 1200px) {
+    .card {
+        width: 300px;
+        height: 90px;
+    }
+}
+
+/* Small tablets to big tablets: from 768 to 1023px */
+@media only screen and (max-width: 1023px) {
+    
+}
+
+/* Small phones to small tablets: from 481 to 767px */
+@media only screen and (max-width: 767px) {
+    
+}
+
+/* Small phones from 0 to 480px */
+@media only screen and (max-width: 480px) {
+    
+}

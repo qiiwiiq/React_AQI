@@ -12,7 +12,7 @@ import '../css/App.css';
 class App extends React.Component{
     state = { data: [], region: '', selectedSite: '' };
 
-    componentWillMount(){
+    componentDidMount(){
         // 撈AQI資料
         const getData = async () => {
             try{
