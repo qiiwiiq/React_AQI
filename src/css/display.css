@@ -36,13 +36,28 @@
 }
 
 .siteList {
-    width: 754px;
+    margin-left: 20px;
+    width: 723px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .siteList .card {
+    width: 48%;
     cursor: pointer;
 }
 
+@media only screen and (max-width: 870px){
+    .siteList .card {
+        width: 100%;
+    }
+    .siteList {
+        margin: 0 0 0 3%;
+        min-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .siteList { min-width: 255px; }
+}

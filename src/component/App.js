@@ -65,18 +65,20 @@ class App extends React.Component{
         
         if(data.length>0){
             return (
-                <div className="page">
-                    <div className="row">
-                        <SearchBar submit={this.onRegionSubmit}/>
-                        <AQIindex/>
-                    </div>
-                    <div className="section-display">
-                        <Display 
-                            data={this.regionData(data, region)} 
-                            region={region} 
-                            onSiteSelect={this.onSiteSelect} 
-                            SiteName={selectedSite}
-                        />
+                <div>
+                    <div className="page">
+                        <div className="row">
+                            <SearchBar submit={this.onRegionSubmit}/>
+                            <AQIindex/>
+                        </div>
+                        <div className="section-display">
+                            <Display 
+                                data={this.regionData(data, region)} 
+                                region={region} 
+                                onSiteSelect={this.onSiteSelect} 
+                                SiteName={selectedSite}
+                            />
+                        </div>
                     </div>
                     <div className="section-footer">
                         <Footer/>

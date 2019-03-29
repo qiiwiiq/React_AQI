@@ -38,3 +38,10 @@
     font-size: 0.9rem;
     font-weight: 400;
 }
+
+
+@media only screen and (max-width: 700px){
+    .outer-container {
+        width: 300px;
+    }
+}
