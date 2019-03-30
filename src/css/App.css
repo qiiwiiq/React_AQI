@@ -16,3 +16,25 @@
 .section-display {
     margin-top: 0.2vh;
 }
+
+@media only screen and (max-width: 600px){
+    .page { 
+        margin-top: 0px; 
+        padding: 0;
+    }
+    .row {
+        flex-direction: column;
+        background-image: linear-gradient(to bottom,
+        rgba(240, 240, 240, 0) 30%,
+        rgba(240, 240, 240, 1) 100% 
+        ), 
+        linear-gradient(to right,
+            rgba(148, 245, 131, 0.8),
+            rgba(255, 175, 106, 0.8),
+            rgba(173, 23, 115, 0.8)
+        );
+    }
+    .section-display {
+        padding: 0 10px;
+    }
+}

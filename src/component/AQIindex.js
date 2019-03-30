@@ -4,7 +4,7 @@ import '../css/AQIindex.css';
 class AQIindex extends React.Component {
     render(){
         return (
-            <div class="index">
+            <div className="index">
                 <table className="table1">
                 <tbody>
                     <tr id="grade">

@@ -61,3 +61,59 @@
 @media only screen and (max-width: 700px){
     .siteList { min-width: 255px; }
 }
+
+@media only screen and (max-width: 600px){
+    .note {
+        flex: 0 1 160px;
+    }
+
+    .display-data { position: relative; }
+
+    .siteDetail {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(240, 240, 240, 0.95);
+    }
+
+    .siteList { 
+        margin: 0;
+        min-width: auto;
+    }
+
+    .siteList .card {
+        width: 49%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .siteList .card .siteName {
+        font-size: 1.8rem;
+    }
+
+    .siteList .card .AQI {
+        font-size: 2rem;
+    }
+}
+
+
+@media only screen and (max-width: 430px){
+    .title {
+        flex: 0 1 85px;
+    }
+
+    .note {
+        flex: 0 1 130px;
+    }
+
+    .siteList .card .siteName {
+        width: 55%;
+    }
+
+    .siteList .card .AQI {
+        width: 45%;
+    }
+}

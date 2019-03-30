@@ -70,6 +70,30 @@ td {
     justify-content: center;
 }
 
+.table3Display {
+    width: 300px;
+    height: 25px;
+    padding: 0 10px;
+    background-image: linear-gradient(to right,
+        #95F084,
+        #FFAF6A,
+        #AD1774
+    );
+    display: none;
+}
+
+.table3Display p {
+    line-height: 25px;
+}
+
+.table3Display p:first-of-type {
+    float: left;
+}
+
+.table3Display p:last-of-type {
+    float: right;
+}
+
 @media only screen and (max-width: 950px){
     .table1 { display: none; }
     .table2Display { display: block; }
@@ -86,4 +110,8 @@ td {
 
 @media only screen and (max-width: 700px){
     .table2 { min-width: 250px;}
+}
+
+@media only screen and (max-width: 600px){
+    .table2Display { display: none; }
 }

@@ -41,7 +41,21 @@
 
 
 @media only screen and (max-width: 700px){
-    .outer-container {
-        width: 300px;
+    .outer-container { width: 300px; }
+}
+
+@media only screen and (max-width: 600px){
+    .siteDetail-page {
+        width: 300px; 
+        margin: auto; 
     }
+    .siteDetail-card { width: 300px; }
+}
+
+@media only screen and (max-width: 430px){
+    .siteDetail-page,
+    .siteDetail-card .card,
+    .outer-container { width: 260px; }
+
+    .outer-container { height: 380px; }
 }
