@@ -17,6 +17,7 @@ i::before {
     -webkit-background-clip: text;
     color: transparent;
     font-size: 8rem;
+    animation: loadingAnimation2 2s infinite;
 }
 
 .cover {
@@ -25,7 +26,7 @@ i::before {
     left: 0;
     width: 100%;
     background-color: #F0F0F0;
-    animation: loadingAnimation 10s linear infinite;
+    /* animation: loadingAnimation 10s linear infinite; */
 }
 
 @keyframes loadingAnimation {
@@ -34,4 +35,10 @@ i::before {
     50% { height: 0%; }
     70% { height: 0%; }
     100% { height: 100%; }
+}
+
+@keyframes loadingAnimation2 {
+    0% { opacity: 1; }
+    50% { opacity: 0;  }
+    100% { opacity: 1;  }
 }
