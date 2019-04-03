@@ -105,6 +105,10 @@
 
 
 @media only screen and (max-width: 430px){
+    .displayPage {
+        min-height: 520px;
+    }
+
     .title {
         flex: 0 1 85px;
     }
@@ -120,4 +124,12 @@
     .siteList .card .AQI {
         width: 45%;
     }
+}
+
+@media only screen and (max-width: 340px){
+    .displayPage {
+        min-height: 480px;
+    }
+
+    .siteDetail .innerContainer { font-size: 1.7rem; }
 }
