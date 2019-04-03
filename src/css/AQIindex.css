@@ -53,16 +53,16 @@ td {
 }
 
 .table2 {
-    width: 100%;
     height: 102px;
     margin-left: 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-content: space-between;
 }
 
 .table2 div {
-    width: 30%;
+    width: 32%;
     height: 40%;
     margin-top: 10px;
     display: flex;
@@ -70,38 +70,14 @@ td {
     justify-content: center;
 }
 
-.table3Display {
-    width: 300px;
-    height: 25px;
-    padding: 0 10px;
-    background-image: linear-gradient(to right,
-        #95F084,
-        #FFAF6A,
-        #AD1774
-    );
-    display: none;
-}
-
-.table3Display p {
-    line-height: 25px;
-}
-
-.table3Display p:first-of-type {
-    float: left;
-}
-
-.table3Display p:last-of-type {
-    float: right;
-}
-
 @media only screen and (max-width: 950px){
     .table1 { display: none; }
     .table2Display { display: block; }
 }
 
-@media only screen and (max-width: 870px){
+@media only screen and (max-width: 830px){
     .table2 div { 
-        width: 43%;
+        width: 48%;
         height: 23%;
     }
 
@@ -113,5 +89,21 @@ td {
 }
 
 @media only screen and (max-width: 600px){
-    .table2Display { display: none; }
+    .index { width: 100% }
+    .table2 { 
+        margin-left: 0px;
+        height: 50px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: space-around; 
+    }
+    .table2 div { 
+        width: 32%;
+        height: auto;
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 340px){
+    .table2 { height: 40px; }
 }

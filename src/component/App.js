@@ -78,6 +78,7 @@ class App extends React.Component{
                                 onSiteSelect={this.onSiteSelect} 
                                 SiteName={selectedSite}
                             />
+                            <AQIindex/>
                         </div>
                     </div>
                     <div className="section-footer">

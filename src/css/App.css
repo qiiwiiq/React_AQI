@@ -17,6 +17,10 @@
     margin-top: 0.2vh;
 }
 
+.section-display .index {
+    display: none;
+}
+
 @media only screen and (max-width: 600px){
     .page { 
         margin-top: 0px; 
@@ -34,7 +38,13 @@
             rgba(173, 23, 115, 0.8)
         );
     }
+    .row .index {
+        display: none;
+    }
     .section-display {
         padding: 0 10px;
+    }
+    .section-display .index {
+        display: block;
     }
 }
