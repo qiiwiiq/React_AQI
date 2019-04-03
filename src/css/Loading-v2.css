@@ -1,0 +1,37 @@
+.loading-page {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-page-container {
+    position: relative;
+}
+
+i::before {
+    background-image: linear-gradient(to bottom, 
+    rgb(255, 208, 0), 
+    rgb(255, 102, 0));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 8rem;
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #F0F0F0;
+    animation: loadingAnimation 10s linear infinite;
+}
+
+@keyframes loadingAnimation {
+    0% { height: 100%; }
+    20% { height: 100%; }
+    50% { height: 0%; }
+    70% { height: 0%; }
+    100% { height: 100%; }
+}

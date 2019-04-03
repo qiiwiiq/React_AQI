@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 import AQIindex from './AQIindex';
 import Display from './Display';
 import Footer from './Footer';
-import Loading from './Loading';
+import Loading from './Loading-v2';
 import '../css/App.css';
 
 
