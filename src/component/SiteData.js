@@ -27,9 +27,21 @@ const AQIColorIndex = (AQI) => {
 
 const SiteData = ({onSiteSelect, SiteName, AQI}) => {
     const bgColor = AQIColorIndex(AQI);
+
+    // 處理 SiteName 過長的問題
+    let sitename, subSitename;
+
+    if(SiteName.indexOf('(')>-1){
+        sitename = SiteName.substring(0,SiteName.indexOf('('));
+        subSitename = SiteName.substring(SiteName.indexOf('('), SiteName.length);
+    }else {
+        sitename = SiteName;
+        subSitename = "";
+    }
+
     return (
         <div className="card" onClick={() => onSiteSelect(SiteName)} >
-            <div className="siteName">{SiteName}</div>
+            <div className="siteName">{sitename}<sub className="subSitename">{subSitename}</sub></div>
             <div style={{backgroundColor: bgColor}} className="AQI">{AQI}</div>
         </div>
     );
