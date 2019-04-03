@@ -5,6 +5,33 @@ import '../css/display.css';
 
 class Display extends React.Component {
 
+    constructor(props){
+        super(props);
+        this.cardRef = React.createRef();
+        this.detailRef = React.createRef();
+    }
+
+    componentDidMount(){
+        this.toggle();
+        window.addEventListener('resize', this.toggle);
+    }
+
+    // device顯示寬度小於600時，點選地區AQI切換顯示隱藏詳細資料欄
+    toggle = () => {
+        if(window.innerWidth<=600){
+            this.detailRef.current.style.setProperty('display', 'none');
+            this.cardRef.current.addEventListener('click', ()=>{
+                this.detailRef.current.style.setProperty('display', 'block');
+            });
+
+            this.detailRef.current.addEventListener('click', ()=>{
+                this.detailRef.current.style.setProperty('display', 'none');
+            });
+        } else {
+            this.detailRef.current.style.setProperty('display', 'block');
+        }
+    };
+
     // 得到觀測站的資料物件
     getSiteData = (arr, site) => {
         let selectedSiteData = arr.filter(el => Object.values(el)[0] === site);
@@ -37,7 +64,7 @@ class Display extends React.Component {
 
                     <div className="display-data">
                         {/* 左邊: 點選之觀測站詳細資訊欄位 */}
-                        <div className="siteDetail">
+                        <div className="siteDetail" ref={this.detailRef}>
                             <SiteDetail 
                                 onSiteSelect={onSiteSelect} 
                                 data={this.getSiteData(data, SiteName)} 
@@ -46,7 +73,7 @@ class Display extends React.Component {
                         </div>
 
                         {/* 右邊: 地區每一監測站AQI */}
-                        <div className="siteList">
+                        <div className="siteList" ref={this.cardRef}>
                             {this.renderList()}
                         </div>
                     </div>

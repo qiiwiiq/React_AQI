@@ -63,6 +63,10 @@
 }
 
 @media only screen and (max-width: 600px){
+    .displayPage {
+        min-height: 580px;
+    }
+    
     .note {
         flex: 0 1 160px;
     }
