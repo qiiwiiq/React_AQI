@@ -16,10 +16,10 @@ class App extends React.Component{
         // 撈AQI資料
         const getData = async () => {
             try{
-                const response = await axios.get(`${proxy}https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000259/?format=json&limit=100&token=${key}`);
+                const response = await axios.get(`${proxy}opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000259?format=json&limit=100&token=${key}`);
                 this.setState({ 
                     data: response.data.result.records,
-                    region: '臺南市'
+                    region: '臺北市'
                 });
                 let sitedata = this.regionData(this.state.data, this.state.region)[0];
                 let defaultSite = this.getDefaultSite(sitedata);
