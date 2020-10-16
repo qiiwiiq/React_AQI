@@ -1,4 +1,4 @@
-## [React] 台灣空氣品質查詢 [DEMO](https://q3n96ym6w9.codesandbox.io/)
+## [React] 台灣空氣品質查詢 [DEMO](https://evening-caverns-55256.herokuapp.com/)
 * RWD 網頁切版
 * 使用 axios 串接環保署空氣品質指標 API
 * 練習 React
