@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { key, proxy } from './config';
+// import { key, proxy } from './config';
 import SearchBar from './SearchBar';
 import AQIindex from './AQIindex';
 import Display from './Display';
@@ -16,9 +16,9 @@ class App extends React.Component{
         // 撈AQI資料
         const getData = async () => {
             try{
-                const response = await axios.get(`${proxy}opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000259?format=json&limit=100&token=${key}`);
+                const response = await axios.get(`https://data.epa.gov.tw/api/v1/aqx_p_432?limit=1000&api_key=9be7b239-557b-4c10-9775-78cadfc555e9&format=json`);
                 this.setState({ 
-                    data: response.data.result.records,
+                    data: response.data.records,
                     region: '臺北市'
                 });
                 let sitedata = this.regionData(this.state.data, this.state.region)[0];
@@ -56,7 +56,7 @@ class App extends React.Component{
 
     // 取出地區資料
     regionData = (data, region) => {
-        let regionData = data.filter(item => Object.values(item)[1] === region);
+        let regionData = data.filter(item => item.County === region);
         return regionData;
     };
 
